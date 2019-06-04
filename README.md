@@ -28,14 +28,14 @@ Augmented Dataset are also 32x32 and contained inside the data folder.
 
 ### Step 0: Loading the Data
 First step is to load the data. The database contains pictures of German Traffic signs
-![GTSRB_43_classes](README_images/GTSRB_43_classes.png raw=true "GTSRB 43 Classes")
+![GTSRB_43_classes](README_images/GTSRB_43_classes.png)
 
 ### Step 1: Visualize the Data Set
 Because the data set we are working is huge, we want to visualize the data distibution of the data (how much data we have per label) for the train, dev, and test set.  
   
 The figure on the bottom shows how skewed the dataset is with more data present for labels < 20 and fewer for labels > 20. This can overfit our prediction model to perform better for such labels.  
 
-![train_valid_test_histo](README_images/train_valid_test_histo.png raw=true "Train Valid Test Histogram")  
+![train_valid_test_histo](README_images/train_valid_test_histo.png)  
 
 ### Step 2: PreProcess/Augumenting Data 
 Because the data set we are working has noticible difference in amount between the different labels, we want to augment that dataset to produce more data for labels that do not have much on the training set. We are only augmenting the **Training SET** to create a model that is more robust to not only to certain labels, but all.  
@@ -44,11 +44,11 @@ Below are some of the preprocess methods to augument the training set:
 * Flip the image along the vertical axis
 * Salt and Pepper Noise
 * Rotate the image +- n degree
-![augment_example](README_images/augment_example.png raw=true "Augmentation Examples")   
+![augment_example](README_images/augment_example.png)   
   
 After augmentating the data, plot another histogram to view the distribution of the training set
-![train_histo.](README_images/train_histo.png raw=true "Original Training Set Histogram")  
-![aug_train_histo](README_images/aug_train_histo.png raw=true "Augmented Training Set Histogram")  
+![train_histo.](README_images/train_histo.png)  
+![aug_train_histo](README_images/aug_train_histo.png)  
   
 In addition to adding noise and rotating the images, the following preprocess methods were also used
 1. Grayscaling the images 
@@ -84,7 +84,7 @@ With the last augumented training set model, we achieved 92.5% with the test dat
   
 ### Step 4: Predictions on new images
 The final final step was to find images from the web and see how well the model performed on these images. I chose 15 images as seen in the figure below.
-![final_test_images](README_images/final_test_images.png raw=true "Final Test Images from the Web")  
+![final_test_images](README_images/final_test_images.png)  
   
 The accuracy for this final test set was **60%**.
   
